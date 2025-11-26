@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Essence-Articulos para el hogar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+</head>
+
+<style>
+  .nav-link.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* espacio entre el icono, el texto y la flecha */
+}
+
+.nav-link.dropdown-toggle::after {
+    margin-left: 4px !important;
+    margin-top: 2px; /* sube ligeramente la flecha */
+}
+
+.container-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-category {
+  height: 250px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.card-category::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  transition: .3s ease-in-out;
+}
+
+.card-category:hover {
+  transform: scale(1.03);
+}
+
+.card-category:hover::before {
+  background: rgba(0,0,0,0.5);
+}
+
+.card-category p {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+</style>
+
+<body>
+  
+   <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #FFEDED; padding-top: 15px; padding-bottom: 15px;">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home Essence</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ms-auto">
+       <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+       <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+       <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-link" href="login.html">
+        <i class="bi bi-person-fill"></i>
+        <span id="userName">Login</span>
+        </a>
+        <!--Aqui use una flecha personalizada -->
+          <span id="userDropdown" class="custom-dropdown-arrow" data-bs-toggle="dropdown">⯆</span>
+          <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" id="logoutBtn" href="#">Cerrar sesión</a></li>
+          </ul>
+      </li>
+      </ul>
+        </div>
+    </div>
+</nav>
+
+  
+    <!--Aquí esta el banner estatico-->
+    <section id="inicio" class="d-flex align-items-center justify-content-center"
+         style="height: 750px; background-image: url('https://relanhome.com.mx/cdn/shop/collections/BANNERS_WEB.jpg?v=1713202916&width=1500'); 
+                background-size: cover; background-position: center;">
+
+        <div style="background: rgba(255, 255, 255, 0.75); padding: 40px 55px; border-radius: 12px; text-align: center;">
+        <h1 style="font-size: 3rem; font-weight: 600; color: #333;">Eleva tu hogar con estilo</h1>
+          <p style="font-size: 1.2rem; color: #555; margin-top: 10px;">
+            Descubre muebles y accesorios seleccionados para transformar tus espacios.
+          </p>
+         </div>
+    </section>
+
+    <!--Sección de categorias-->
+    <section class="container top-categories" style="margin-top: 80px;">
+      <h1 class="heading-1 text-center mb-5">Categorías</h1>
+      <div class="container-categories">
+        <div class="card-category" style="background-image: url(https://d3uq4j19mzp2q8.cloudfront.net/media/catalog/product/cache/6d187b7bf28a06ba0047d72fdca6de29/s/a/sala-moderna-esquinera-beige-plaza_sal84722k1-dc-principal-w.jpg);">
+          <p>Sala</p>
+        </div>
+
+        <div class="card-category" style="background-image: url(https://d38qrl83hrqn1t.cloudfront.net/media/catalog/product/cache/e5313a059d82e47a0dd0c73b13afb6be/c/o/cocina_sicilia_choco_1.80mts-4.jpg);">
+          <p>Cocina</p>
+        </div>
+
+        <div class="card-category" style="background-image: url(https://muebleriabonanza.mx/wp-content/uploads/2022/11/recamara-Sycamore-_-LFTR01C8359.jpg);">
+          <p>Recámara</p>
+        </div>
+
+        <div class="card-category" style="background-image: url(https://folymuebles.com/cdn/shop/files/267740-Photoroom_800x600.webp?v=1720655429);">
+          <p>Comedor</p>
+        </div>
+
+        <div class="card-category" style="background-image: url(https://img5.su-cdn.com/common/2022/11/04/5ae90804b3aa802ff86cbf988739d4fe.jpg);">
+          <p>Baño</p>
+        </div>
+
+        <div class="card-category" style="background-image: url(https://media.revistaad.es/photos/6204dac9e65d719c06a9ccbe/16:9/w_1920,c_limit/How%20to%20furnish%20your%20home%20on%20a%20budget.jpg);">
+          <p>Decoración</p>
+        </div>
+      </div>
+
+    </section>
+
+      <!--Contacto-->
+    <section id="contacto" class="py-5" style="margin-top: 50px;">
+        <div class="container">
+            <h1 class="text-center mb-4">Contacto</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="correo" placeholder="Tu correo electrónico">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" placeholder="Tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!--Enlaces Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script>
+  const firebaseConfig = {
+      apiKey: "AIzaSyBAfCWNZ0UuXdYtToCEeEt_eDH5QY_Z83Y",
+      authDomain: "mi-primer-proyecto-b175f.firebaseapp.com",
+      projectId: "mi-primer-proyecto-b175f",
+      storageBucket: "mi-primer-proyecto-b175f.firebasestorage.appspot.com",
+      messagingSenderId: "569020481723",
+      appId: "1:569020481723:web:5ef634bfb6b9ee6aefe99e",
+      measurementId: "G-9P6ZL4D5RW"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  firebase.auth().onAuthStateChanged(user => {
+    const userNameSpan = document.getElementById("userName");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (user) {
+        // Mostrar nombre
+        userNameSpan.textContent = user.displayName || "Usuario";
+
+        // Mostrar botón de cerrar sesión
+        logoutBtn.style.display = "inline";
+
+    } else {
+        // Si no hay sesión iniciada
+        userNameSpan.textContent = "Login";
+        logoutBtn.style.display = "none";
+    }
+});
+
+// Cerrar sesión
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+    try {
+        await firebase.auth().signOut();
+        alert("Sesión cerrada");
+        window.location.href = "index.html";
+    } catch (error) {
+        alert("Error: " + error.message);
+    }
+});
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Botón para instalar la app-->
+  <button id="btnInstall" hidden>Instalar app</button>
+
+  <script>
+    // Registrar el Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch((err) => console.warn('sw register failed', err));
+    }
+
+    // Manejo del "beforeinstallprompt" para mostrar el botón de instalar
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('btnInstall');
+      if (btn) btn.hidden = false;
+    });
+
+    // Clic en el botón para lanzar el prompt
+    document.addEventListener('click', async (e) => {
+      if (e.target && e.target.id === 'btnInstall') {
+        if (!deferredPrompt) return;
+        e.target.disabled = true;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('Instalación', outcome);
+        deferredPrompt = null;
+        e.target.hidden = true;
+      }
+    });
+
+    // Evento cuando la aplicación fue instalada
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA instalada');
+      const btn = document.getElementById('btnInstall');
+      if (btn) btn.hidden = true;
+    });
+
+  </script>
+</body>
+</html>
